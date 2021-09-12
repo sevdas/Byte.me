@@ -1,9 +1,10 @@
 # URL Shortener Service
 
-- API to create short urls using Node, Express and Firebase
+> API to create short urls using Node, Express and Firebase
 
 ## Quick Start
 
-### Install dependencies
-
+```bash
+# Install dependencies
 yarn
+```
