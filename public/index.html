@@ -5,14 +5,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Byte Me!</title>
+    <link rel="stylesheet" href="main.css" />
   </head>
   <body>
     <main>
       <h1>Enter your URL to shorten:</h1>
       <form action="/" method="post" id="url-form">
         <div class="form-group">
-          <!-- For fully consistent support among all browsers -->
-          <label for="url-input">* Enter Long Url: (required)</label>
+          <label for="url-input" id="url-label">* Enter Long Url:</label>
           <input
             type="url"
             name="url"
