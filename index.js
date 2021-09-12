@@ -5,9 +5,21 @@ const port = 3000;
 const static = express.static("public");
 app.use(static);
 
+//Extract the POST request body data
+app.use(express.json());
+app.use(
+  express.urlencoded({
+    extended: true,
+  })
+);
+
 //Handle routes
 app.get("/", (req, res) => {
-  res.send("Welcome to my API!");
+  res.sendFile("index.html");
+});
+
+app.post("/", (req, res) => {
+  res.send(req.body);
 });
 
 app.listen(port, () => {

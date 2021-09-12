@@ -14,9 +14,12 @@
           <!-- For fully consistent support among all browsers -->
           <label for="url-input">* Enter Long Url: (required)</label>
           <input
-            type="text"
+            type="url"
+            name="url"
             id="url-input"
             placeholder="https://about.makerble.com/"
+            pattern="https://.*"
+            size="50"
             required
           />
           <button id="shorten-button" type="submit">Shorten!</button>
@@ -27,5 +30,6 @@
         <h2 class="list--total">Clicks all time favorites!</h2>
       </section>
     </main>
+    <script type="module" src="main.js"></script>
   </body>
 </html>
