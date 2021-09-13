@@ -7,4 +7,6 @@
 ```bash
 # Install dependencies
 yarn
+# Run
+yarn start
 ```

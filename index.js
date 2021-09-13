@@ -61,7 +61,7 @@ app.post("/api/shortened", async (req, res) => {
       .set({ ...data, viewCount: 0 });
     res.send({ shortUrl });
   } else {
-    console.log("Something went wrong");
+    console.log("Please enter valid url!");
   }
 });
 
