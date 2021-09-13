@@ -30,6 +30,10 @@ app.get("/", (req, res) => {
   res.sendFile("index.html");
 });
 
+app.get("/popular", (req, res) => {
+  res.send("This page is under construction!");
+});
+
 const isAbsoluteUrl = (url) => /^[a-z][a-z0-9+.-]*:/.test(url);
 
 app.post("/api/shortened", async (req, res) => {
@@ -55,11 +59,6 @@ app.post("/api/shortened", async (req, res) => {
       .collection("shortUrls")
       .doc(shortUrl)
       .set({ ...data, viewCount: 0 });
-    const longRes = await db
-      .collection("longUrls")
-      .doc(href.replace("https://", ""))
-      .set(data);
-    console.log(shortRes);
     res.send({ shortUrl });
   } else {
     console.log("Something went wrong");
