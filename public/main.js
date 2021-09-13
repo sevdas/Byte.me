@@ -4,12 +4,10 @@ const input = document.getElementById("url-input"),
 
 input.focus();
 
-console.log("TEST");
-
 async function shortenUrl(href) {
-  const shortid = (
+  const shortUrl = (
     await (
-      await fetch("/", {
+      await fetch("/api/shortened", {
         method: "post",
         headers: {
           "Content-Type": "application/json",
@@ -17,12 +15,13 @@ async function shortenUrl(href) {
         body: JSON.stringify({ href }),
       })
     ).json()
-  ).shortid;
+  ).shortUrl;
 
-  return shortid;
+  return shortUrl;
 }
 
-button.addEventListener("click", async () => {
-  const link = `${location.origin}/l/${await shortenUrl(input.value)}`;
+button.addEventListener("click", async (event) => {
+  event.preventDefault();
+  const link = `${location.origin}/${await shortenUrl(input.value)}`;
   out.innerHTML = `<a href="${link}" target="_blank">${link}</a>`;
 });
